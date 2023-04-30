@@ -16,10 +16,10 @@ function getURLsFromHTML(htmlBody, baseURL) {
     for (const linkElement of linkElements) {      
         if (linkElement.href.slice(0, 1) === '/') {
             const url = checkForValidURL(`${baseURL}${linkElement.href}`);
-            const isValid = url === '' ? null : urls.push(url);
+            url === '' ? null : urls.push(url);
         } else {
             const url = checkForValidURL(`${linkElement.href}`);
-            const isValid = url === '' ? null : urls.push(url);
+            url === '' ? null : urls.push(url);
         }
     }
     return urls;
